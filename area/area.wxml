@@ -1,0 +1,27 @@
+<!--pages/area/area.wxml-->
+
+
+ <van-field
+    label="{{ label }}"
+    placeholder="{{ placeholder }}"
+    value="{{ area }}"
+    readonly
+    bindtap="onOpen"
+    size="large"
+    input-align="right"
+  />
+  <!-- 弹出层 -->
+  <van-popup
+  show="{{ showAddressChoose }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  >
+    <van-picker 
+      columns="{{ areaList }}" 
+      value-key="dictLabel" 
+      bind:change="onAreaChange" 
+      show-toolbar
+      bind:confirm="onAreaConfirm"
+      bind:cancel="onClose"
+    />
+  </van-popup>

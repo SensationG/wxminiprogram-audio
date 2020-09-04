@@ -1,0 +1,30 @@
+<!-- 自定义音频播放组件 -->
+<view class="itemarea">
+  <van-row>
+    <van-col span="6">
+      <view class="play_btn" bindtap="playAudio">
+        <view hidden="{{ play }}">
+          <van-button round icon="play-circle-o" block></van-button>
+        </view>
+        <view hidden="{{ !play }}">
+          <van-button round icon="pause-circle-o" block></van-button>
+        </view>
+      </view>
+    </van-col>
+    <van-col span="16">
+      <view class="title">{{ name }} </view>
+      <view class="content">上传人：{{ author }} <view class="start_time">{{ audioCurrent }}</view></view>
+    </van-col>
+  </van-row>
+  <!-- 进度条 -->
+  <van-row>
+    <slider 
+      value="{{ audioPos }}"
+      block-size="16"
+      bindchange="sliderChange"
+    />
+  </van-row>
+
+</view>
+
+<van-toast id="van-toast" style="width: 300px" />
