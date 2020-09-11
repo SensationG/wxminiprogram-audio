@@ -20,6 +20,8 @@
 .title {
   font-size: 15px;
   padding-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content {
